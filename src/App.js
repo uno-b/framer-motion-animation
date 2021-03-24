@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { motion } from 'framer-motion';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <motion.div
+      animate={{
+        scale: [1, 2, 2, 1, 1],
+        rotate: [0, 0, 270, 270, 0],
+        borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+      }}
+      transition={{ duration: 2, repeat: Infinity }}
+      className='shape'
+    ></motion.div>
   );
 }
 
