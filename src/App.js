@@ -2,14 +2,27 @@ import './App.css';
 import { motion } from 'framer-motion';
 
 function App() {
+  const bounceTransition = {
+    y: {
+      duration: 0.4,
+      yoyo: Infinity,
+      ease: 'easeOut',
+    },
+    backgroundColor: {
+      duration: 0,
+      yoyo: Infinity,
+      ease: 'easeOut',
+      repeatDelay: 0.8,
+    },
+  };
+
   return (
     <motion.div
+      transition={bounceTransition}
       animate={{
-        scale: [1, 2, 2, 1, 1],
-        rotate: [0, 0, 270, 270, 0],
-        borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+        y: ['100%', '-100%'],
+        backgroundColor: ['#ff6699', '#6666ff'],
       }}
-      transition={{ duration: 2, repeat: Infinity }}
       className='shape'
     ></motion.div>
   );
